@@ -1,0 +1,47 @@
+<div class="left" ng-controller="playerCtrl as player">
+  <div class="please" ng-show="!loggedin">
+    <img src="assets/img/logo.gif" alt="not logged in">
+    <p>PLEASE SIGN IN</p>
+  </div>
+  <div class="v-container" ng-repeat="video in videos">
+    <!-- <div class="v-container-opac">
+      <p>{{video.description}}</p>
+    </div> -->
+
+    <div class="v-container-title">
+      <h5 style="min-height:30px;">{{video.name}}</h5>
+    </div>
+    <div class="v-container-stars">
+      <p>{{video.ratings | average}}</p>
+    </div>
+    <div class="middle">
+      <h3>DESCRIPTION</h3>
+<p>{{video.description}}</p>
+     </div>
+    <video width=100% height=300 controls poster="assets/img/poster1.jpg">  <source src={{video.url}} type="video/mp4">Your browser does not support the video tag.</video>
+  </div>
+</div>
+<div class="footer" ng-controller="authCtrl as auth">
+  <p>PLAYER</p>
+  <p ng-show="loggedin"><a href="/#/authenticate" ng-click="auth.signOut();">Sign Out</a></p>
+  <p ng-show="!loggedin"><a href="/#/authenticate">Sign In / Sign Up</a></p>
+</div>
+
+<!-- <div class="player" >
+        <div class="video-heading">
+      <p>{{video.name}}</p>
+      <p>{{video.ratings | average}}</p>
+    </div>
+    <video class="player__video viewer" src={{video.url}} type="video/mp4" controls poster="assets/img/poster1.jpg"></video>
+    <div class="side-kick">
+      <fieldset class="rating">
+        <input type="radio" id="star5" name="rating" value="5" /><label for="star5" title="Rocks!">5 stars</label>
+        <input type="radio" id="star4" name="rating" value="4" /><label for="star4" title="Pretty good">4 stars</label>
+        <input type="radio" id="star3" name="rating" value="3" /><label for="star3" title="Meh">3 stars</label>
+        <input type="radio" id="star2" name="rating" value="2" /><label for="star2" title="Kinda bad">2 stars</label>
+        <input type="radio" id="star1" name="rating" value="1" /><label for="star1" title="Sucks big time">1 star</label>
+      </fieldset>
+   </div>
+  </div>
+  <br><br>
+</div> -->

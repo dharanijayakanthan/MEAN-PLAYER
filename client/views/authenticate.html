@@ -1,0 +1,24 @@
+<div ng-controller="authCtrl as auth">
+<div class="form-container">
+<div class="message" ng-show="auth.isLoggedIn">
+<p>Successfully Logged In</p>
+</div>
+<form class="form col-lg-4 col-lg-offset-4 col-md-4 col-md-offset-4 col-sm-4 col-sm-offset-4" ng-submit="auth.authenticate(auth.authData)">
+<div class="form-group">
+  <input type="text" class="form-control" placeholder="username" ng-model="auth.authData.username">
+</div>
+<div class="form-group">
+   <input type="password" class="form-control" placeholder="password" ng-model="auth.authData.password">
+</div>
+<div class="form-group form-inline text-center">
+  <input type="submit" class="btn btn-md btn-primary form-control" value="Sign in">
+  <input type="button" class="btn btn-md btn-danger form-control" value="Register">
+</div>
+</form>
+</div>
+<div class="footer" ng-controller="playerCtrl">
+  <p>CROSS OVER</p>
+  <p ng-show="loggedin"><a href="/#/authenticate"  ng-click="auth.signOut();">Sign Out</a></p>
+  <p ng-show="!loggedin"><a href="/#/authenticate">Sign In / Sign Up</a></p>
+</div>
+</div>
